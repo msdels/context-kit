@@ -1,0 +1,25 @@
+# {{MODULE}}
+
+{{WHAT_THIS_MODULE_OWNS_IN_ONE_PARAGRAPH: the job it does for the rest of the system, in the
+project's own vocabulary. Not a file listing: an agent can read the directory.}}
+
+## Why it is built this way
+- {{The decision behind the shape, and the obvious alternative. "We chose X over Y because Z"
+  is the form that survives a refactor.}}
+
+## Rules
+- {{One line per constraint: the rule, then what enforces it (a test, a type, a lint) if
+  anything does.}}
+- {{The boundary: imports from {{ALLOWED}}, never from {{FORBIDDEN}}, and why it must stay so.}}
+
+## What an agent gets wrong here
+- {{The gotcha: the thing that looks safe and is not, with the consequence.}}
+- {{The invariant that is not visible in any one file.}}
+
+<!-- One file per module: why it is built this way, how to write code in it, and its gotchas.
+Every line must fail the grep test: an agent could not learn it by reading the code.
+Pruning moves a line out by ID, never deletes it. A moved line leaves one pointer line at the
+end of its section's file: "- More lines for this file, read on demand: `docs/context/overflow/kit-<slug>.md`".
+Pinned lines sit first in their section, tagged `[s:<id> pin]`, capped at 25% of the budget; pin
+only what must never leave. Do not tag lines yourself: an ID appears once a line has a history.
+This comment is stripped before Claude Code loads the file, so it costs no context. -->

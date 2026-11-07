@@ -1,0 +1,41 @@
+# {{PROJECT_NAME}}
+
+{{ONE_LINE_WHAT_THIS_IS}}
+
+## Project Context
+@docs/context/mission.md
+@docs/context/domain-model.md
+
+## Quick Start
+- Install: `{{INSTALL_CMD}}` · tests: `{{TEST_CMD}}` · lint: `{{LINT_CMD}}`
+- The gate: `{{CI_CMD}}`; run it before every push
+- Run it locally: `{{RUN_CMD}}`
+
+## Context Routing
+Read the row that matches before starting, including when you are investigating a symptom and
+have not opened a file yet. A module's `CLAUDE.md` also loads by itself once you work in it.
+
+| Working on...              | Read first...                    |
+|----------------------------|----------------------------------|
+| {{MODULE_A}}               | {{PATH_A}}/CLAUDE.md             |
+| {{MODULE_B}}               | {{PATH_B}}/CLAUDE.md             |
+| Tests                      | tests/CLAUDE.md                  |
+| Design decisions           | docs/context/design-decisions.md |
+
+## Context files
+- A module's `CLAUDE.md` holds why it is built that way, its rules and its gotchas. A line an
+  agent could learn from the code does not belong in it.
+- When the owner explains a design choice, write it to `docs/context/design-decisions.md` or the
+  module's `CLAUDE.md` in the same turn.
+- Lines leave a context file only through `.claude/hooks/context_upkeep.py` (`move`, `restore`),
+  never by deletion. `.claude/hooks/context_check.py` is the authority on the size budgets.
+
+## Hard Rules
+1. **{{RULE_1}}**: {{WHY_1}}
+2. **{{RULE_2}}**: {{WHY_2}}
+3. **{{RULE_3}}**: {{WHY_3}}
+
+## Code Style
+- {{STYLE_1, e.g. "Flat > nested; no abstraction without a named, measured pain"}}
+- {{STYLE_2, e.g. "Plain functions, data in, data out; comments explain *why*, not *what*"}}
+- {{STYLE_3, e.g. "Type hints on signatures, never on locals"}}

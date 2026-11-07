@@ -1,0 +1,10 @@
+# The kit's own lint settings. Ruff uses the nearest config file, so this one, not the host
+# repo's, governs .claude/hooks/: the scripts must run on Python 3.9 (no datetime.UTC), and a
+# host rule they fail would block every push. E501 is off: the kit wraps at 100 by hand, and
+# a few regexes and messages run past it.
+line-length = 100
+target-version = "py39"
+
+[lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

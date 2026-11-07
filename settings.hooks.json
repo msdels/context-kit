@@ -1,0 +1,11 @@
+{
+  "_comment": "Template. install.py turns each {script, script_args} into the exec form Claude Code documents as cross-platform: command + args, no shell, so it runs the same under sh, Git Bash and PowerShell.",
+  "env": {
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "hooks": {
+    "SessionStart": [
+      {"matcher": "startup|clear|resume", "hooks": [{"script": "context_upkeep.py", "script_args": ["attention"], "timeout": 10}]}
+    ]
+  }
+}

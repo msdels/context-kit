@@ -1,0 +1,28 @@
+{
+  "main_branch": "main",
+  "work_branch": "",
+  "require_pr_to_main": false,
+
+  "root_claude_md": "CLAUDE.md",
+
+  "size_limits": {
+    "CLAUDE.md": 60,
+    "docs/context/mission.md": 80,
+    "docs/context/domain-model.md": 80,
+    "docs/context/design-decisions.md": 100
+  },
+  "claude_md_globs": ["**/CLAUDE.md"],
+  "claude_md_max_chars": 5000,
+  "rules_glob": ".claude/rules/*.md",
+  "rules_max_chars": 6000,
+  "rules_max_line": 300,
+  "always_loaded_budget_chars": 24000,
+  "text_hygiene": true,
+
+  "python_cmd": "python",
+
+  "audit_every_sessions": 10,
+  "audit_budget_usd": 25,
+  "audit_month_usd": 100,
+  "audit_model": ""
+}

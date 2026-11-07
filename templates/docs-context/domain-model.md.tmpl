@@ -1,0 +1,28 @@
+# Domain Model
+
+## The central unit
+**{{THE THING THE SYSTEM IS ORGANISED AROUND, and the wrong default an agent will otherwise
+assume.}}** State it as a hierarchy if it is one:
+
+```
+{{parent}}        {{what it groups}}
+  └── {{child}}   {{one row of the source}}
+        └── {{unit}}   {{THE INDEXING / PROCESSING UNIT}}
+```
+
+**The canonical example:** {{a real id, and what it demonstrates: the fixture every test uses.}}
+
+## Terminology (ours, not the user's)
+- **{{TERM}}**: {{definition}}. {{If the UI must never say this word, say so here.}}
+- **{{VERB}}**: {{the operation, in the team's vocabulary}}
+
+## Invariants
+1. {{The rule that holds whatever the code says, and what violating it looked like the one
+   time it was violated.}}
+2. {{The trap an agent falls into with this data (e.g. reading a missing value as a zero).}}
+3. {{Where facts come from, and what may enrich vs. overwrite them.}}
+
+## External systems
+| System | What it gives us | Notes |
+|---|---|---|
+| {{SYSTEM}} | {{data or capability}} | {{refresh cadence, the gotcha, the runbook path}} |
